@@ -2,22 +2,30 @@
 var btn = document.getElementById("submit")
 var bmiRes = document.getElementById('bmiFinal')
 var response = document.getElementById('response')
+var reset = document.getElementById('reset')
 
 //console.log(btn);
 btn.addEventListener('click',function(event) {
          var age = Number(document.getElementById("age").value)
          var ht = Number(document.getElementById('ht').value)
          var wt = Number(document.getElementById('wt').value)
-         if(ht >= 999 )
+        // console.log(age);
+
+          if(ht >= 999 )
          {
-           alert("Please choose proper value of Height")
+           response.innerText = "Please choose proper value of Height"
          }
-         if(wt >= 9999)
+          else if(wt >= 9999)
          {
-           alert("Please choose proper value of Weight")
+             response.innerText = "Please choose proper value of Weight"
          }
          else {
            var ht_m = ht/100
+           if (ht_m === 0) {
+             bmiRes.innerText = "Invalid Data entered"
+             response.innerText = "Please enter valid information"
+
+           } else {
            var bmi = wt /Math.pow(ht_m,2)
            var bmiFinal = Math.round(bmi)
            bmiRes.innerText = bmiFinal
@@ -40,7 +48,7 @@ btn.addEventListener('click',function(event) {
            }
            console.log(bmiFinal)
 
-
+         }
          }
 
 
@@ -49,17 +57,15 @@ btn.addEventListener('click',function(event) {
 })
 
 
-/*function calculateBMI(event)
-{
-  var age = document.getElementById('age').value
-  var ht = document.getElementById('ht').value
-  var wt = document.getElementById('wt').value
-
-   var bmi = Math.round(wt/Math.pow(ht,2) * 10000);
-   console.log(Math.round(bmi * 100) / 100);
-   event.preventDefault();
 
 
+reset.addEventListener('click',function(event){
+  var age = Number(document.getElementById("age").value)
+  var ht = Number(document.getElementById('ht').value)
+  var wt = Number(document.getElementById('wt').value)
 
+  age.innerText = "";
+  ht.innerText = "";
+  wt.innerText="";
 
-}*/
+})

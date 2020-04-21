@@ -1,6 +1,6 @@
 .body
 {
-  background-color: #95A2A0;
+  background-color: #0BAE90;
 
 }
 
@@ -26,4 +26,5 @@ h3
 {
   text-align: center;
   font-family: 'Lobster', cursive;
+  color: black;
 }
