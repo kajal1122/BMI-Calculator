@@ -9,8 +9,9 @@
   text-align: center;
 
 }
-h3
+#bmi-heading
 {
+  margin-top: 5%;
   font-family: 'Lobster', cursive;
 }
 #jumbo
@@ -19,6 +20,7 @@ h3
     text-align: center;
     height:400px !important;
     font-family: 'Girassol', cursive;
+    width: 50%;
 }
 
 
