@@ -6,6 +6,21 @@ var showDiv = document.getElementById('res1')
 var errorList = document.createElement("UL")
 
 
+
+
+var btn_emb = document.getElementById('btn-emb')
+
+btn_emb.addEventListener('click',function(){
+  var mydiv = document.getElementById('emb-link')
+
+  mydiv.innerText = 'To embed this on your site, just copy and paste the code below in your html file:' + '\n' + '<iframe style="border-style: none;width: 100%; height: 600px;" src="https://kajal1122.github.io/BMI-Calculator/"></iframe>'
+ //mydiv.style.font = 'sans-serif';
+
+
+
+})
+
+
 var input = document.createElement("INPUT");
 input.setAttribute("type","number")
 input.setAttribute("placeholder","Your Height(cm)")

@@ -7,13 +7,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Girassol&family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
-  <body class="body">
+  <body>
     <div class="wrapper">
       <h2 id="bmi-heading">Know Your Body Mass Index(BMI)</h2>
     <form  name="bmiform" method="post">
 
 
       <div class='jumbotron container' id="jumbo">
+        <div class="error" id="error_div">
+        </div>
+        <div class='btn-toolbar pull-right'>
+     <div class='btn-group'>
+       <button type='button'id="btn_eng" class='btn btn-dark'>English</button>
+       <button type='button' id="btn_metric" class='btn btn-light'>Metric</button>
+
+     </div>
+   </div>
+
+   <!--
+ab agar jaha bhi wo form wala box hai, usme ham ek empty div rkhe to kya wo dikhega?nhi
+is div ka class name error rkh dete hai.
+add kr do.  form ke upar rakh de na ?
+english metric ke upar ab broswer me dekhte hai. kholo jara chrome me , thik hai
+ab hamara kaam hai ki jab null wala error aae to is div ke inner HTML me ek list of
+errrors add ho jae. mtlb jo jo bhi khali hoga wo wo ke liye ek message aaega error ka.
+auhr wo as a li element add kr denge iske andar. kre?
+ha
+ -->
 
       <div class="gender">
         <input type="radio" id="male" name="gender" value="male" required>
@@ -22,42 +42,85 @@
         <label for="female">Female</label>
 
         </div>
-        <div>
+        <div id="ht_age">
 
             <input type="number" id="age" min="0" name="age" value="" placeholder="Your Age" required>
-            <input type="number" id="ht" min="0" name="height" value="" placeholder="Your Height(cm)" required>
+
+            <select id="ht_fit" name="height-ft" required>
+              <option value="">Your Height(ft)</option>
+                <option value="3">3 ft</option>
+                <option value="4">4 ft</option>
+                <option value="5">5 ft</option>
+                <option value="6">6 ft</option>
+                <option value="7">7 ft</option>
+                <option value="8">8 ft</option>
+              </select>
+              <select id="ht_inch" name="height-in">
+                <option value="">In.</option>
+                  <option value="0">0 in</option>
+                  <option value="1">1 in</option>
+                  <option value="2">2 in</option>
+                  <option value="3">3 in</option>
+                  <option value="4">4 in</option>
+                  <option value="5">5 in</option>
+                  <option value="6">6 in</option>
+                  <option value="7">7 in</option>
+                  <option value="8">8 in</option>
+                  <option value="9">9 in</option>
+                  <option value="10">10 in</option>
+                  <option value="11">11 in</option>
+
+                </select>
+
 
           </div>
           <br>
           <div>
-            <input type="number" id="wt" min="0"  name="weight" value="" placeholder="Your Weight(kg)" required>
+            <input type="number" id="wt" min="0"  name="weight" value="" placeholder="Your Weight(lbs)" required>
             </div>
             <br>
             <button class="btn btn-success" type="submit" id = "submit" name="button">Calculate</button>
-            <button class="btn btn-danger"  id="reset" type="submit" name="button">Reset</button><br><hr>
-            <label>Result </label><br>
-            <label for="bmiFinal">Your BMI:</label>
-            <p id='bmiFinal'></p>
-            <label for="response">Response based on your BMI:</label>
-            <p id = "response"></p>
 
 
+<button class="btn embed-btn btn-secondary btn-lg btn-block" id="btn-emb" type="button" name="button">EMBED THIS TOOL </button>
+<div id="emb-link">
 
-
+</div>
 </div>
 
 
 </form>
   </div>
 
+  <div class="jumbotron container remp" id="res1">
+
+    <h3 id="show">Your Results</h3>
+
+    <p></p>
+    <div class="">
+
+
+    <img src="bmi_result_image.png" alt="image">
+      <span>A healthy BMI is between 18.5 and 24.9, but these numbers can vary for athletes, pregnant women, and between ethnicities.
+An obese BMI is generally associated with higher risk of chronic diseases like heart disease and diabetes. Your health care provider can help you better understand the reasons you’re obese and how they affect your health.</span>
+  </div>
+    <button class="btn btn-dark btn-lg" type="submit" name="reset" id="startover">Start Over</button> <br>
+   <br>
+
+
+
+  </div>
+
 
   <script src="index.js">
+
+
 
   </script>
 
   </body>
   <footer class="foo">
-    Made By KAJAL
+    Made By @KAJAL
   </footer>
 
 </html>
